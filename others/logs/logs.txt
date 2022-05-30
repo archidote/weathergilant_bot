@@ -1,0 +1,6 @@
+s2022-01-30 10:44:35,404 [MainThread  ] [ERROR]  Infinity polling: polling exited
+2022-01-30 10:44:35,404 [MainThread  ] [ERROR]  Break infinity polling
+2022-01-30 10:44:53,174 [MainThread  ] [ERROR]  Infinity polling: polling exited
+2022-01-30 10:44:53,174 [MainThread  ] [ERROR]  Break infinity polling
+2022-01-30 10:47:12,062 [MainThread  ] [ERROR]  Infinity polling: polling exited
+2022-01-30 10:47:12,062 [MainThread  ] [ERROR]  Break infinity polling

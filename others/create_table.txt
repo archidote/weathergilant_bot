@@ -1,0 +1,16 @@
+CREATE TABLE subscriber_allergies_alerts (
+chat_id integer PRIMARY KEY NOT NULL UNIQUE,
+location text
+);
+CREATE TABLE subscriber_pollution_alerts (
+chat_id integer PRIMARY KEY NOT NULL UNIQUE,
+location text
+);
+CREATE TABLE subscriber_currentWeather_alerts (
+chat_id integer PRIMARY KEY NOT NULL UNIQUE,
+location text
+);
+CREATE TABLE subscriber_weatherAlertness_alerts (
+chat_id integer PRIMARY KEY NOT NULL UNIQUE,
+location text
+);

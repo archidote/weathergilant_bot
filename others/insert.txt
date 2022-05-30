@@ -1,0 +1,4 @@
+INSERT OR IGNORE INTO subscriber_weatherAlertness_alerts(chat_id,location) VALUES ('653258620','Lyon');
+INSERT OR IGNORE INTO subscriber_currentWeather_alerts(chat_id,location) VALUES ('653258620','Pralognan');
+INSERT OR IGNORE INTO subscriber_pollution_alerts(chat_id,location) VALUES ('653258620','Bron');
+INSERT OR IGNORE INTO subscriber_allergies_alerts(chat_id,location) VALUES ('653258620','69');

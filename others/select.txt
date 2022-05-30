@@ -1,0 +1,4 @@
+SELECT * FROM subscriber_weatherAlertness_alerts WHERE chat_id LIKE '653258620' ;
+SELECT * FROM subscriber_currentWeather_alerts WHERE chat_id LIKE '653258620' ;
+SELECT * FROM subscriber_pollution_alerts WHERE chat_id LIKE '653258620' ;
+SELECT * FROM subscriber_allergies_alerts WHERE chat_id LIKE '653258620' ;
