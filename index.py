@@ -119,6 +119,7 @@ def send_welcome(message):
  
 def sendMessageAuto(asset):
 
+	print ("hello")
 	dic = { # Dictionnary of functions who for create a dynamic affectation below
 	"pollution": pollution,
 	"allergies":allergies,
@@ -464,17 +465,22 @@ def callback_inline(call):
 #                                                SEND CUSTOMS ALERTS                                              #
 ###################################################################################################################  
 
+# schedule.every(10).seconds.do(lambda: sendMessageAuto("pollution"))
+# schedule.every(20).seconds.do(lambda: sendMessageAuto("allergies"))
+# schedule.every(30).seconds.do(lambda: sendMessageAuto("currentWeather"))
+# schedule.every(40).seconds.do(lambda: sendMessageAuto("weatherAlertness"))
+
 schedule.every().day.at("07:00").do(lambda: sendMessageAuto("weatherAlertness"))
 schedule.every().day.at("07:00").do(lambda: sendMessageAuto("currentWeather"))
 schedule.every().day.at("07:00").do(lambda: sendMessageAuto("pollution"))
 schedule.every().day.at("07:00").do(lambda: sendMessageAuto("allergies"))
 
-def schedule_api_fetching(): 
+def schedule_send_message_auto(): 
     while True:
         schedule.run_pending()
         t.sleep(1)
 
-t1 = threading.Thread(target = schedule_api_fetching)
+t1 = threading.Thread(target = schedule_send_message_auto)
 t1.start()
 
 bot.infinity_polling() # Bot Execution

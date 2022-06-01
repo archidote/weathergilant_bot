@@ -21,7 +21,6 @@ def insertSubscriber(chat_id,asset,location) :
 
             cursor.execute(f"""INSERT OR IGNORE INTO subscriber_{asset}_alerts(chat_id,location) VALUES ({chat_id},'{location}')""")
             dbConnection.commit()
-            dbConnection.close()
             return 0
         except: 
             return 1
@@ -32,7 +31,6 @@ def insertSubscriber(chat_id,asset,location) :
         else : 
             cursor.execute(f"""INSERT OR IGNORE INTO subscriber_{asset}_alerts(chat_id,location) VALUES ({chat_id},'{location}')""")
             dbConnection.commit()
-            dbConnection.close()
             return 0
 
 def deleteSubscriber(asset, chat_id) : 
@@ -40,7 +38,6 @@ def deleteSubscriber(asset, chat_id) :
     if checkIfUserIsAlreadyASubscriber("subscriber_"+asset+"_alerts",chat_id) == True : 
         cursor.execute(f"""DELETE FROM subscriber_{asset}_alerts WHERE chat_id = {chat_id}""")
         dbConnection.commit()
-        dbConnection.close()
         return "You have been unsubsribed from "+asset+" alert !"
     else : 
         return "You can't unbsubsribe if you are not subscribed 😊"
