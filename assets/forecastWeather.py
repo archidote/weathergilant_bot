@@ -20,8 +20,8 @@ def forecastWeather(location,day) :
         return "No matching location found."
     else : 
         if day == 1 or day == 2: # Tomorrow / After tomorrow
-
-            forecastWeather="Location 📍 : "+data['location']['name']+" - "+data['location']['region']+" - "+data['location']['country']+"\n"
+            forecastWeather= "Forecast Weather : \n "
+            forecastWeather+="Location 📍 : "+data['location']['name']+" - "+data['location']['region']+" - "+data['location']['country']+"\n"
             forecastWeather+="Forecast for : "+data['forecast']['forecastday'][day]['date']+"\n\n"
             forecastWeather+="📈 : "+data['forecast']['forecastday'][day]['day']['condition']['text']+"\n\n"
             forecastWeather+="🌡️ Temperature : \n"

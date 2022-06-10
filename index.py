@@ -127,11 +127,9 @@ def sendMessageAuto(asset):
 	"currentWeather":currentweather
 	}
 
-	conn = sqlite3.connect(database_path)
-	cur = conn.cursor()
-	cur.execute(f"""SELECT * FROM subscriber_{asset}_alerts""")
+	cursor.execute(f"""SELECT * FROM subscriber_{asset}_alerts""")
 
-	rows = cur.fetchall()
+	rows = cursor.fetchall()
 
 	markup="""{"inline_keyboard":[[{"text":"Unsubscribe","callback_data":"unsubscribe_"""+asset+"""_alerts"}],[{"text":"🔄 Refresh","callback_data":"refresh_"""+asset+"""_request_from_alert"}]]}"""
 
@@ -141,6 +139,10 @@ def sendMessageAuto(asset):
 
 		dynamicFunction = dic[asset]
 		bot_message = dynamicFunction(row[1])
+  
+		print (bot_chatID)
+		print (bot_message)
+  
 		bot.send_message(bot_chatID,bot_message,disable_web_page_preview=True,reply_markup=markup)
 
  
@@ -465,15 +467,11 @@ def callback_inline(call):
 #                                                SEND CUSTOMS ALERTS                                              #
 ###################################################################################################################  
 
-# schedule.every(10).seconds.do(lambda: sendMessageAuto("pollution"))
-# schedule.every(20).seconds.do(lambda: sendMessageAuto("allergies"))
-# schedule.every(30).seconds.do(lambda: sendMessageAuto("currentWeather"))
-# schedule.every(40).seconds.do(lambda: sendMessageAuto("weatherAlertness"))
-
 schedule.every().day.at("07:00").do(lambda: sendMessageAuto("weatherAlertness"))
 schedule.every().day.at("07:00").do(lambda: sendMessageAuto("currentWeather"))
 schedule.every().day.at("07:00").do(lambda: sendMessageAuto("pollution"))
 schedule.every().day.at("07:00").do(lambda: sendMessageAuto("allergies"))
+
 
 def schedule_send_message_auto(): 
     while True:

@@ -17,7 +17,8 @@ def currentweather(location) :
     if "location" not in data:
         now="No matching location found."
     else :
-        now="Location 📍 : "+data['location']['name']+" - "+data['location']['region']+" - "+data['location']['country']+"\n"
+        now = "Current Weather : \n"
+        now+="Location 📍 : "+data['location']['name']+" - "+data['location']['region']+" - "+data['location']['country']+"\n"
         now+="Last update : "+data['current']['last_updated']+"\n\n"
         now+="📈 "+data['current']['condition']['text']+"\n"
         now+="🌡️ Temperature : "+str(data['current']['temp_c'])+"\n"

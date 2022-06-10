@@ -24,7 +24,8 @@ def pollution(location) :
         pm2_5=data["current"]["air_quality"]["pm2_5"]
         so2=data["current"]["air_quality"]["so2"]
         
-        pollution="Location 📍 : "+data['location']['name']+" - "+data['location']['region']+" - "+data['location']['country']+"\n"
+        pollution="Pollution : \n"
+        pollution+="Location 📍 : "+data['location']['name']+" - "+data['location']['region']+" - "+data['location']['country']+"\n"
         pollution+="\nno2 : "+pollutionNO2(data["current"]["air_quality"]["no2"])[0]+""
         pollution+="\no3 : "+pollutionO3(data["current"]["air_quality"]["o3"])[0]+""
         pollution+="\npm10 ⚠️ : "+pollutionPM10(data["current"]["air_quality"]["pm10"])[0]+""
