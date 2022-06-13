@@ -32,7 +32,7 @@ bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN, parse_mode=None)
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
 	markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-	bot.reply_to(message, "Hello "+message.from_user.first_name+" 👋 ! Welcome to weathergilant bot. tap /help to know supported command :) ", reply_markup=markup)
+	bot.reply_to(message, "Hello "+message.from_user.first_name+" 👋 !! Welcome to weathergilant bot. tap /help to know supported command :) ", reply_markup=markup)
  
 ############################################# LOCATION specific Menu - Start ############################################
 
