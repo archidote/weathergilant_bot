@@ -18,7 +18,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-  deploy : 
+  deploy:
+    needs: sonarcloud 
+    deploy : 
     runs-on: ubuntu-latest 
     steps : 
       - name : Install private SSH Key 
