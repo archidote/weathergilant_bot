@@ -31,7 +31,8 @@ jobs:
           if_key_exists: fail 
       - name : Pull
         run : | 
-          ssh user@x.x.x.x 'ps -ef | grep "index.py" | grep -v grep | awk '{print $2}' | xargs kill 
+          ssh user@x.x.x.x '
+          ps -ef | grep "index.py" | grep -v grep | awk '{print $2}' | xargs kill 
           cd /home/user/weathergilannt 
           /usr/bin/git pull origin main 
-          /usr/bin/nohup /usr/bin/python3 /home/user/weathergilannt/index.py'
+          /usr/bin/nohup /usr/bin/python3 /home/user/weathergilannt/index.py > /dev/null 2>&1 &'
