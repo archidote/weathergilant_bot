@@ -1,6 +1,6 @@
 #!/bin/bash
-TARGET="/home/geoffrey/vulndote"
-GIT_DIR="/home/geoffrey/vulndote"
+TARGET="/home/geoffrey/weathergilant"
+GIT_DIR="/home/geoffrey/weathergilant_"
 BRANCH="main"
 while read oldrev newrev ref
 do
