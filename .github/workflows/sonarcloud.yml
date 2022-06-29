@@ -31,4 +31,4 @@ jobs:
           config : ${{ secrets.CONFIG }}
           if_key_exists: fail 
       - name : Pull
-        run : ssh user@x.x.x.x 'cd /home/user/weathergilannt && /usr/bin/git pull origin main ; /usr/bin/python3 /home/user/weathergilannt/index.py &'
+        run : ssh -f user@x.x.x.x 'cd /home/user/weathergilannt && /usr/bin/git pull origin main && /usr/bin/nohup /usr/bin/python3 /home/user/weathergilannt/index.py > /dev/null 2>&1 &'
