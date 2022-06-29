@@ -6,7 +6,7 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
-  sonarcloud code analysis:
+  sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
     steps:
