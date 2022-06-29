@@ -6,7 +6,7 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
-  sonarcloud code analysis:
+  sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
     steps:
@@ -19,7 +19,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 jobs:
-  deploy on production only if code analysis success: 
+  deploy: 
     name: deploy 
     runs-on: ubuntu-latest 
     steps: 
