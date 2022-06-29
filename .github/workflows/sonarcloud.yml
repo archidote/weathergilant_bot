@@ -6,7 +6,7 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
-  sonarcloud:
+  sonarcloud code analysis:
     name: SonarCloud
     runs-on: ubuntu-latest
     steps:
@@ -18,7 +18,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-  deploy: 
+jobs :
+  deploy on production only if code analysis success : 
     runs-on: ubuntu-latest 
     steps : 
       - name : Install private SSH Key 
@@ -29,4 +30,4 @@ jobs:
           config : ${{ secrets.CONFIG }}
           if_key_exists: fail 
       - name : Pull
-        run : ssh user@x.x.x.x 'cd /home/user/weathergilannt && /usr/bin/git pull origin main'
+        run : ssh user@x.x.x.x 'cd /home/user/weathergilannt && /usr/bin/git pull origin main ; /usr/bin/python3 /home/user/weathergilannt/index.py &'
