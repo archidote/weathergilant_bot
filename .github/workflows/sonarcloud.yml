@@ -28,5 +28,6 @@ jobs:
           known_hosts : ${{ secrets.SSH_KNOW_HOST }}
           config : ${{ secrets.CONFIG }}
           if_key_exists: fail 
-      - name : Pull 
+      - name : Pull
+        run : ssh -o "StrictHostKeyChecking=no" user@x.x.x.x
         run : ssh user@x.x.x.x "cd /home/user/weathergilannt" && /usr/bin/git pull origin main 
