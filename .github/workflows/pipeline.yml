@@ -32,7 +32,7 @@ jobs:
       - name : Pull
         run : | 
           ssh user@x.x.x.x '
-          pkill -f index.py
+          /usr/bin/pkill -f index.py
           cd /home/user/weathergilannt
           /usr/bin/git pull origin main 
           /usr/bin/nohup /usr/bin/python3 /home/user/weathergilannt/index.py > /dev/null 2>&1 &'
