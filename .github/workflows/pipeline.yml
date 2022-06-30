@@ -17,9 +17,8 @@ jobs:
           config : ${{ secrets.CONFIG }}
           if_key_exists: fail 
       - name : Pull
-        script : 'ssh user@x.x.x.x '/bin/bash -c '/usr/bin/kill -9 $(pgrep -f index.py) > /dev/null; exit 0'''
-        script :
-          - | 
+        run : | 
+          ssh user@x.x.x.x '/bin/bash -c '/usr/bin/kill -9 $(pgrep -f index.py) > /dev/null; exit 0''
           ssh user@x.x.x.x '
           cd /home/user/weathergilannt
           /usr/bin/git pull origin main 
