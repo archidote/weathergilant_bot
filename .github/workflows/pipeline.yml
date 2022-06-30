@@ -19,7 +19,7 @@ jobs:
       - name : Pull
         run : | 
           ssh user@x.x.x.x '
-          /home/user/stopWeathergilantBeforePush.sh
           cd /home/user/weathergilannt
           /usr/bin/git pull origin main 
           /usr/bin/nohup /usr/bin/python3 /home/user/weathergilannt/index.py > /dev/null 2>&1 &'
+        run : '/usr/bin/echo coucou'
