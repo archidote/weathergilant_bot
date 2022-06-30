@@ -18,7 +18,7 @@ jobs:
           if_key_exists: fail 
       - name : Pull
         run : | 
-          ssh user@x.x.x.x '/bin/bash -c '/usr/bin/kill -9 $(pgrep -f index.py) > /dev/null; exit 0''
+          ssh user@x.x.x.x '/usr/bin/kill -9 $(/usr/bin/pgrep -f index.py) > /dev/null; exit 0'
           ssh user@x.x.x.x '
           cd /home/user/weathergilannt
           /usr/bin/git pull origin main 
