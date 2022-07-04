@@ -32,8 +32,9 @@ jobs:
           if_key_exists: ignore
       - name : Pull
         run : | 
-          ssh user@x.x.x.x '/usr/bin/nohup /usr/bin/kill -9 $(/usr/bin/pgrep -f index.py) > /dev/null 2>&1 &'
+          ssh user@x.x.x.x '/usr/bin/screen -X -S weathergilant quit'
           ssh user@x.x.x.x '
           cd /home/user/weathergilannt
-          /usr/bin/git pull origin main 
-          /usr/bin/nohup /usr/bin/python3 /home/user/weathergilannt/index.py > /dev/null 2>&1 &'
+          /usr/bin/git pull origin main
+          /usr/bin/screen -S weathergilant -d -m bash -c 'python3 /home/user/weathergilannt/index.py''
+
