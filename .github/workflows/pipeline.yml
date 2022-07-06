@@ -35,6 +35,6 @@ jobs:
           ssh user@x.x.x.x '/usr/bin/screen -X -S weathergilant quit'
           ssh user@x.x.x.x '
           cd /home/user/weathergilannt
-          /usr/bin/git pull origin main
+          /usr/bin/git pull origin master
           /usr/bin/screen -S weathergilant -d -m bash -c 'python3 /home/user/weathergilannt/index.py''
 
