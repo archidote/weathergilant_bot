@@ -36,5 +36,5 @@ jobs:
           ssh user@x.x.x.x '
           cd /home/user/weathergilannt
           /usr/bin/git pull origin main
-          /usr/bin/screen -S weathergilant -d -m bash -c 'python3 /home/user/weathergilannt/index.py''
+          /usr/bin/SCREEN -S weathergilant -d -m /usr/bin/python3 /home/user/weathergilannt/index.py'
 
