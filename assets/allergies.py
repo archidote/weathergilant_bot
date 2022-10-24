@@ -19,7 +19,7 @@ def allergies(location) :
     allergies+="France - "+data["countyName"]+" - "+data["countyNumber"]+"\n\n"
     
     for i in range(19):
-        allergies+=""+str(data["risks"][i]["pollenName"])+" : "+str(data["risks"][i]["level"])+"/5 - "+allergiesAVG(data["risks"][i]["level"])+"\n"
+        allergies+=""+str(data["risks"][i]["pollenName"])+" : "+str(data["risks"][i]["level"])+"/3 - "+allergiesAVG(data["risks"][i]["level"])+"\n"
     allergies+="-"
         
     return allergies
