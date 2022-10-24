@@ -34,7 +34,7 @@ jobs:
         run : | 
           ssh -p 4242 ${{ secrets.USERNAME }}@${{ secrets.IP }} '/usr/bin/screen -X -S weathergilant quit'
           ssh -p 4242 ${{ secrets.USERNAME }}@${{ secrets.IP }} '
-          cd /home/${{ secrets.USERNAME }}/weathergilannt
+          cd /home/${{ secrets.USERNAME }}/weathergilant
           /usr/bin/git pull origin main
-          /usr/bin/screen -S weathergilant -d -m /usr/bin/python3 /home/user/${{ secrets.USERNAME }}/index.py'
+          /usr/bin/screen -S weathergilant -d -m /usr/bin/python3 /home/user/${{ secrets.USERNAME }}/weathergilant/index.py'
 
