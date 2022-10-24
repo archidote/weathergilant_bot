@@ -32,9 +32,9 @@ jobs:
           if_key_exists: ignore
       - name : Pull
         run : | 
-          ssh user@x.x.x.x '/usr/bin/screen -X -S weathergilant quit'
-          ssh user@x.x.x.x '
-          cd /home/user/weathergilannt
+          ssh -p 4242 ${{ secrets.USERNAME }}@${{ secrets.IP }} '/usr/bin/screen -X -S weathergilant quit'
+          ssh -p 4242 ${{ secrets.USERNAME }}@${{ secrets.IP }} '
+          cd /home/${{ secrets.USERNAME }}/weathergilannt
           /usr/bin/git pull origin main
-          /usr/bin/screen -S weathergilant -d -m /usr/bin/python3 /home/user/weathergilannt/index.py'
+          /usr/bin/screen -S weathergilant -d -m /usr/bin/python3 /home/user/${{ secrets.USERNAME }}/index.py'
 
