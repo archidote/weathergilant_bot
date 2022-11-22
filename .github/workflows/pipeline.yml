@@ -32,8 +32,8 @@ jobs:
           if_key_exists: ignore
       - name : Pull
         run : | 
-          ssh -p 4242 ${{ secrets.USERNAME }}@${{ secrets.IP }} 'tmux kill-session -t weathergilant'
           ssh -p 4242 ${{ secrets.USERNAME }}@${{ secrets.IP }} '
+          tmux kill-session -t weathergilant
           cd /home/${{ secrets.USERNAME }}/weathergilant
           git pull origin main
           tmux new-session -d -s weathergilant 'python3 /home/${{ secrets.USERNAME }}/weathergilant/weathergilant.py''

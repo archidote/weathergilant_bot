@@ -107,7 +107,7 @@ def send_welcome(message):
 @bot.message_handler(commands=['help'])
 def send_welcome(message):
 
-	helpMenu = """ℹ️ *Help Menu* ℹ️\n
+	helpMenu = """ℹ️ *Hel Menu* ℹ️\n
 	/weather Show weather forecast. ex : Paris \n
 	/location - Show weather information and more for your current location\n
 	/pollution - Show live pollution indexes. ex : Paris \n
