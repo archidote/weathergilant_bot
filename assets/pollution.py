@@ -18,6 +18,7 @@ def pollution(location) :
     if "location" not in data:
         pollution="No matching location found."
     else :
+
         no2=data["current"]["air_quality"]["no2"]
         pm10=data["current"]["air_quality"]["pm10"]
         o3=data["current"]["air_quality"]["o3"]
